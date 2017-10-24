@@ -25,6 +25,16 @@
 [image19]: ./img/writeup_img19.png "Soft Max for sign 8"
 [image20]: ./img/writeup_img20.png "Soft Max for sign 9"
 [image21]: ./img/writeup_img21.png "Soft Max for sign 10"
+[image22]: ./img/new_square_img_1.png =50x50 "Cropped sign 1"
+[image23]: ./img/new_square_img_2.png =50x50 "Cropped sign 2"
+[image24]: ./img/new_square_img_3.png =50x50 "Cropped sign 3"
+[image25]: ./img/new_square_img_4.png =50x50 "Cropped sign 4"
+[image26]: ./img/new_square_img_5.png =50x50 "Cropped sign 5"
+[image27]: ./img/new_square_img_6.png =50x50 "Cropped sign 6"
+[image28]: ./img/new_square_img_7.png =50x50 "Cropped sign 7"
+[image29]: ./img/new_square_img_8.png =50x50 "Cropped sign 8"
+[image30]: ./img/new_square_img_9.png =50x50 "Cropped sign 9"
+[image31]: ./img/new_square_img_10.png =50x50 "Cropped sign 10"
 
 Note, that the [python notebook](https://github.com/selyunin/carnd_t1_p2/blob/master/Traffic_Sign_Classifier.ipynb) 
 already contains a solid description of the project.
@@ -103,8 +113,6 @@ Moreover, since there are much more image classes then handwritten digits, I add
 | Fully connected 2		| Input: 820, out: 256 							|
 | RELU					|												|
 | Fully connected 3		| Input: 256, out: 43							|
-| RELU					|												|
-|:---------------------:|:---------------------------------------------:| 
  
 
 
@@ -144,6 +152,22 @@ To be applicable with the trained CNN, the images are re-scaled to 32x32:
 ![ ][image10]
 
 The last step was to normalize the images, i.e. convert them to the domain [-0.5, 0.5].
+
+Let us now take a look on each image in more detail and elaborate on characteristics,
+that might make classification task difficult.
+
+| Image # | Image       	| Right label                 |
+|:-------:|:---------------:|:---------------------------:|
+| 1.      |  ![ ][image22] 	| 23, Slippery road           |
+| 2.      |  ![ ][image23]	| 36, Go straight or right    |
+| 3.      |  ![ ][image24]	| 27, Pedestrians             |
+| 4.      |  ![ ][image25] 	| 31, Wild animals crossing   |
+| 5.      |  ![ ][image26] 	| 38, Keep right              |
+| 6.      |  ![ ][image27] 	| 18, General caution         |
+| 7.      |  ![ ][image28]	| 17, No entry                |
+| 8.      |  ![ ][image29] 	| 1,  Speed limit (30km/h)    |
+| 9.      |  ![ ][image30] 	| 12, Priority road           |
+| 10.     |  ![ ][image31] 	| 13, Yield                   |
 
 
 #### 2.  Model predictions on new traffic signs 
