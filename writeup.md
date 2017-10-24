@@ -25,16 +25,16 @@
 [image19]: ./img/writeup_img19.png "Soft Max for sign 8"
 [image20]: ./img/writeup_img20.png "Soft Max for sign 9"
 [image21]: ./img/writeup_img21.png "Soft Max for sign 10"
-[image22]: ./img/new_square_img_1.png  "Cropped sign 1" =50x50
-[image23]: ./img/new_square_img_2.png  "Cropped sign 2" =50x50
-[image24]: ./img/new_square_img_3.png  "Cropped sign 3" =50x50
-[image25]: ./img/new_square_img_4.png  "Cropped sign 4" =50x50
-[image26]: ./img/new_square_img_5.png  "Cropped sign 5" =50x50
-[image27]: ./img/new_square_img_6.png  "Cropped sign 6" =50x50
-[image28]: ./img/new_square_img_7.png  "Cropped sign 7" =50x50
-[image29]: ./img/new_square_img_8.png  "Cropped sign 8" =50x50
-[image30]: ./img/new_square_img_9.png  "Cropped sign 9" =50x50
-[image31]: ./img/new_square_img_10.png "Cropped sign 10" =50x50 
+[image22]: ./img/new_square_img_1.png  "Cropped sign 1" 
+[image23]: ./img/new_square_img_2.png  "Cropped sign 2" 
+[image24]: ./img/new_square_img_3.png  "Cropped sign 3" 
+[image25]: ./img/new_square_img_4.png  "Cropped sign 4" 
+[image26]: ./img/new_square_img_5.png  "Cropped sign 5" 
+[image27]: ./img/new_square_img_6.png  "Cropped sign 6" 
+[image28]: ./img/new_square_img_7.png  "Cropped sign 7" 
+[image29]: ./img/new_square_img_8.png  "Cropped sign 8" 
+[image30]: ./img/new_square_img_9.png  "Cropped sign 9" 
+[image31]: ./img/new_square_img_10.png "Cropped sign 10" 
 
 Note, that the [python notebook](https://github.com/selyunin/carnd_t1_p2/blob/master/Traffic_Sign_Classifier.ipynb) 
 already contains a solid description of the project.
