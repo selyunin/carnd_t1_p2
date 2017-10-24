@@ -80,7 +80,7 @@ image to extend the original dataset.
 
 ![ ][image4]
 
-After applying image filters on underrepresented images (see pseudo-code and implementation in the python notebook), 
+After applying image filters on underrepresented image classes (see pseudo-code and implementation in the python notebook), 
 the distribution of classes looks as follows:
 
 ![ ][image5]
@@ -120,6 +120,8 @@ Moreover, since there are much more image classes then handwritten digits, I add
 
 To train the model I used Adam Optimizer available in Tensorflow.
 The batch size is set to 256 images, we train for 50 epochs, and use learning rate of 0.8e-4.
+Weights in the convolutional and fully connected layers are initialized at
+random with mean 0 and standard deviation 0.1.
 Training and validation loss and accuracy look as follows:
 
 ![ ][image6]
@@ -130,8 +132,8 @@ Started from the LeNet architecture, I was not getting got results on the valida
 The model was overfitting on the training data. Then I added dropout, which did not help much.
 After consulting the forums, I realized that it is reasonable to increase number of features.
 I increased number of features (depth) of the convolutional layers, and got accuracy around
-95% on both validation and test set. This is not as impressive, as 99% in LeCun paper, 
-but sufficient for the learning example.
+95% on both validation and test set. This is not as impressive, 
+as 99% in the original LeCun paper on the topic, but sufficient for the learning example.
 
 ### Test a Model on New Images
 
@@ -156,23 +158,23 @@ The last step was to normalize the images, i.e. convert them to the domain [-0.5
 Let us now take a look on each image in more detail and elaborate on characteristics,
 that might make classification task difficult.
 
-| Image # | Image       	| Right label                 |
-|:-------:|:---------------:|:---------------------------:|
-| 1.      |  ![ ][image22] 	| 23, Slippery road           |
-| 2.      |  ![ ][image23]	| 36, Go straight or right    |
-| 3.      |  ![ ][image24]	| 27, Pedestrians             |
-| 4.      |  ![ ][image25] 	| 31, Wild animals crossing   |
-| 5.      |  ![ ][image26] 	| 38, Keep right              |
-| 6.      |  ![ ][image27] 	| 18, General caution         |
-| 7.      |  ![ ][image28]	| 17, No entry                |
-| 8.      |  ![ ][image29] 	| 1,  Speed limit (30km/h)    |
-| 9.      |  ![ ][image30] 	| 12, Priority road           |
-| 10.     |  ![ ][image31] 	| 13, Yield                   |
+| Image # | Image       	| Right label                 | Description                                                       |
+|:-------:|:---------------:|:---------------------------:|:-----------------------------------------------------------------:|
+| 1.      |  ![ ][image22] 	| 23, Slippery road           | Easy: relatively good contrast, position                          |
+| 2.      |  ![ ][image23]	| 36, Go straight or right    | Easy: relatively good contrast, position                          |
+| 3.      |  ![ ][image24]	| 27, Pedestrians             | Medium: low contrast, good position, orientation                  |
+| 4.      |  ![ ][image25] 	| 31, Wild animals crossing   | Hard: very bright image, can be misclassified with slippery road  |
+| 5.      |  ![ ][image26] 	| 38, Keep right              | Medium: low contrast, good position                               |
+| 6.      |  ![ ][image27] 	| 18, General caution         | Medium: low contrast, good position                               |
+| 7.      |  ![ ][image28]	| 17, No entry                | Easy: good contrast, good position                                |
+| 8.      |  ![ ][image29] 	| 1,  Speed limit (30km/h)    | Hard: small sign, digits are relatively small                     |
+| 9.      |  ![ ][image30] 	| 12, Priority road           | Medium: a bit low contrast, the rest is fine                      |
+| 10.     |  ![ ][image31] 	| 13, Yield                   | Medium: bright background, the sign is tilted                     |
 
 
 #### 2.  Model predictions on new traffic signs 
 
-Let us visualize softmax probabilites when predicting the traffic signs.
+Let us visualize softmax probabilities when predicting the traffic signs.
 
 ![ ][image11]
 
