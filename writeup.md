@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition Project** 
 
 ---
 
@@ -14,9 +14,20 @@
 [image8]: ./img/writeup_img8.png "Traffic Sign Images in wild 2"
 [image9]: ./img/writeup_img9.png "Cropped traffic sign images"
 [image10]: ./img/writeup_img10.png "Scaled traffic sign images"
+[image11]: ./img/writeup_img11.png "Soft Max probabilities"
+[image12]: ./img/writeup_img12.png "Soft Max for sign 1"
+[image13]: ./img/writeup_img13.png "Soft Max for sign 2"
+[image14]: ./img/writeup_img14.png "Soft Max for sign 3"
+[image15]: ./img/writeup_img15.png "Soft Max for sign 4"
+[image16]: ./img/writeup_img16.png "Soft Max for sign 5"
+[image17]: ./img/writeup_img17.png "Soft Max for sign 6"
+[image18]: ./img/writeup_img18.png "Soft Max for sign 7"
+[image19]: ./img/writeup_img19.png "Soft Max for sign 8"
+[image20]: ./img/writeup_img20.png "Soft Max for sign 9"
+[image21]: ./img/writeup_img21.png "Soft Max for sign 10"
 
 Note, that the [python notebook](https://github.com/selyunin/carnd_t1_p2/blob/master/Traffic_Sign_Classifier.ipynb) 
-already contains  solid description of the project.
+already contains a solid description of the project.
 
 ---
 
@@ -126,53 +137,72 @@ If an iterative approach was chosen:
 If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* How does the final model s accuracy on the training, validation and test set provide evidence that the model is working well?
  
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Getting new images
 
-Here are five German traffic signs that I found on the web:
+I used Google street view to get the traffic sign images from streets of Hamburg.
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![ ][image7]
 
-The first image might be difficult to classify because ...
+![ ][image8]
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+Then I cropped the images to a square, obtaining:
+
+![ ][image9]
+
+To be applicable with the trained CNN, the images are re-scaled to 32x32:
+
+![ ][image10]
+
+The last step was to normalize the images, i.e. convert them to the domain [-0.5, 0.5].
+
+
+#### 2.  Model predictions on new traffic signs 
+
+Let us visualize softmax probabilites when predicting the traffic signs.
+
+![ ][image11]
 
 Here are the results of the prediction:
-
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+1.  Slippery road
+2.  Go straight or right
+3.  Pedestrians
+4.  Wild animals crossing
+5.  Keep right
+6.  General caution
+7.  No entry
+8.  Speed limit (20km/h) -- not correct, should be 30!
+9.  Priority road
+10. Yield
 
 
-For the second image ... 
+The model was able to correctly guess 9 of the 10 traffic signs, which gives an accuracy of 90%. 
+This is comparable with test and validation set accuracy. Moreover, the model is unsure about the sign
+8, although all the probabilities indicate that this is a speed restriction sign.
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+#### 3. Visualizing the softmax probabilities for each prediction of the new image. 
 
 
+![ ][image12]
+
+![ ][image13]
+
+![ ][image14]
+
+![ ][image15]
+
+![ ][image16]
+
+![ ][image17]
+
+![ ][image18]
+
+![ ][image19]
+
+![ ][image20]
+
+![ ][image21]
